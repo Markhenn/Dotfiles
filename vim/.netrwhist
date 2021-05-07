@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/mark/Dropbox (Personal)/Coding/Launch_School/RB_Challenges'
+let g:netrw_dirhist_5='/Users/mark/Dropbox (Personal)/Coding/Launch_School/RB_Challenges/test'
+let g:netrw_dirhist_4='/Users/mark/Dropbox (Personal)/Coding/Launch_School/RB_Challenges'
+let g:netrw_dirhist_3='/Users/mark/.git_template'
+let g:netrw_dirhist_2='/Users/mark/Dropbox (Personal)/Coding/Launch_School/RB_Challenges/.git/refs/tags'
+let g:netrw_dirhist_1='/Users/mark/Dropbox (Personal)/Coding/Launch School/Inheritance'
+let g:netrw_dirhist_0='/Users/mark/Library/Mobile Documents/iCloud~co~fluder~fsnotes/Documents/Archive'
+let g:netrw_dirhist_9='/Users/mark/.config'
+let g:netrw_dirhist_8='/Users/mark/Dropbox (Personal)/Apps/Mackup/.config'
+let g:netrw_dirhist_7='/Users/mark/.oh-my-zsh'

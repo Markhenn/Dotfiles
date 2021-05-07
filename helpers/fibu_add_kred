@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This program downloads all FiBu Kreditors from DW
+# then adds the new kreditor
+# Then uploads the file again
+
+# check to add kreditor with number first than the name
+s=$0
+base="${s##*/}"
+[ $# -lt 2 ] && { echo "Usage: $base kreditornummer;\"Firmename\""; exit 1; }
+
+# start of script
+dw_download='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/FiBu_Kreditoren_alle_2021.csv'
+ftp -in $dw_download
+
+read -r num name <<< "$@"
+kred="$num;$name"
+
+echo "$kred" >> FiBu_Kreditoren_alle_2021.csv
+
+dw_server='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/'
+ftp -in -u $dw_server "FiBu_Kreditoren_alle_2021.csv"
+
+rm FiBu_Kreditoren_alle_2021.csv

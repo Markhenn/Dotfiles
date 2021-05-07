@@ -1,0 +1,74 @@
+﻿Objektnr;Versicherungsnummer;VertragArtBezeichnung;Versicherung;Vertragsart;E-Mail
+00150;60.083.019/5/001/4500;Gebäudeversicherung;SIGNAL IDUNA ;Wohngebäude;service@ml-insurance.com
+00150;37.229.545/5/003/6500;Gebäudeversicherung;SIGNAL IDUNA ;Grundstückshaftpflicht;service@ml-insurance.com
+00151;301 34 111271194;Gebäudeversicherung;R+V Allgemeine Versicherung AG;Wohngebäude;Holger.Niewelt@ruv.de
+00151;301 29 964687323;Gebäudeversicherung;R+V Allgemeine Versicherung AG;Grundstückshaftpflicht;Holger.Niewelt@ruv.de
+00171;LW 9158652;Gebäudeversicherung;Bayerischer Versicherungsverband Versicherung AG;Wohngebäude;Frank.Mueller@demmin.eu
+00171;73.297.535.659;Gebäudeversicherung;Gothaer Allgemeine Versicherung AG;Grundstückshaftpflicht;Frank.Mueller@demmin.eu
+00172;;Gebäudeversicherung;DEVK;Wohngebäude;Daniel.Prevoteau@vtp.devk.de
+00172;;Gebäudeversicherung;DEVK;Grundstückshaftpflicht;Daniel.Prevoteau@vtp.devk.de
+00173;168227429;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00200;171016966;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00203;171007988;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00204;171009395;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00205;171015860;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00205;010.010.0103213.3-03;Gebäudeversicherung;Helvetia Versicherungen;Gewässerschadenhaftpflicht;schaden@helvetia.de, agentur.kaufmann@helvetia.de
+00206;171009050;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00208;171207661;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00209;171207630;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00211;171017345;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00251;171213570;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00262;50040375464;Gebäudeversicherung;SV Sparkassen Versicherung;Wohngebäude, Grundstückshaftpflicht;schaden@fivers.de, service@ergon-ing.de, service@sparkassenversicherung.de
+00263;171212849;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00263;010.010.0103647.3-03;Gewässerschaden-Versicherung;Helvetia Versicherungen;Gewässerschadenhaftpflicht;schaden@helvetia.de, agentur.kaufmann@helvetia.de
+00264;171204615;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00266;171678935;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00266;010.010.0103648.9-03;Gebäudeversicherung;Helvetia Versicherungen;Grundstückshaftpflicht;schaden@helvetia.de, agentur.kaufmann@helvetia.de
+00272;407 34 341463971/014;Gebäudeversicherung;R+V Allgemeine Versicherung AG;Wohngebäude, Glas;Jens.Spohrmann@ruv.de , ruv@ruv.de
+00272;70 23 71 68304/279;Gebäudeversicherung;AXA Versicherung AG;Grundstückshaftpflicht;schaden@axa.de , schaden@fivers.de
+00288;407 34 341463971/014;Gebäudeversicherung;R+V Allgemeine Versicherung AG;Wohngebäude, Glas;Jens.Spohrmann@ruv.de , ruv@ruv.de
+00288;70 23 71 68304/279;Gebäudeversicherung;AXA Versicherung AG;Grundstückshaftpflicht;schaden@axa.de , schaden@fivers.de
+00290;010.012.0099274.4;Gebäudeversicherung;Helvetia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@helvetia.de, agentur.kaufmann@helvetia.de
+00290;010.026.0099864.1-03;Gebäudeversicherung;Helvetia Versicherungen;Glas;schaden@helvetia.de, agentur.kaufmann@helvetia.de
+00290;LW-967-9218;Gebäudeversicherung;Feuersozietät Berlin Brandenburg  Versicherung AG;??? Wohngebäude;schaden@feuersozietaet.de
+00297;LW-968-1045;Gebäudeversicherung;Feuersozietät Berlin Brandenburg  Versicherung AG;Wohngebäude;schaden@feuersozietaet.de
+00297;HE-902-6907;Gebäudeversicherung;Feuersozietät Berlin Brandenburg  Versicherung AG;Grundstückshaftpflicht;schaden@feuersozietaet.de
+00297;010.070.0076348.7-03;Gebäudeversicherung;Helvetia Versicherungen;??? Haftpflicht;schaden@helvetia.de, agentur.kaufmann@helvetia.de
+00299;160-FKPK-010.079.503.545;Gebäudeversicherung;Aachen Münchener;Wohngebäude;schadenservice@generali.com
+00299;160-FKHU-010.079.530.661;Gebäudeversicherung;Aachen Münchener;Grundstückshaftpflicht;schadenservice@generali.com
+00300;171014481;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00301;171207579;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00302;171207029;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00303;171207043;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht, Glas;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00304;171204547;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Glas;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00305;171005731;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00306;171006165;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht, Glas;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00307;171005373;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00308;171011169;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00309;171006431;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00310;171007308;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00311;171015501;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00312;171015228;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00313;171015396;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00314;171011961;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht, Gewässerschadenhaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00315;171214423;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00322;171200662;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00323;171012630;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00324;171012982;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00327;171014290;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00330;0001/ 02 209 302 K 80;Gebäudeversicherung Badstr. 59;Barmenia Versicherungen;Geschäftsgebäude;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00330;0001/ 02 209 302 K 81;Gebäudeversicherung Bastianstr. 17;Barmenia Versicherungen;Geschäftsgebäude;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00330;0001 / 02 209 302 K30;Gebäudeversicherung;Barmenia Versicherungen;Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00331;171014016;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00332;170877902;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00333;170878824;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00335;170878534;Gebäudeversicherung;Barmenia Versicherungen;Wohngebäude, Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00358;0001/ 02 209 371 A 80;Gebäudeversicherung;Barmenia Versicherungen;Geschäftsgebäude;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00358;0001 / 02 209 371 A30;Gebäudeversicherung;Barmenia Versicherungen;Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00490;0001/ 02 209 258 L 80;Gebäudeversicherung;Barmenia Versicherungen;Geschäftsgebäude;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00490;0001/ 02 209 258 L 30;Gebäudeversicherung;Barmenia Versicherungen;Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00493;0001/ 02 209 258 L 82;Gebäudeversicherung;Barmenia Versicherungen;Geschäftsgebäude;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00493;0001/ 02 209 258 L 32;Gebäudeversicherung;Barmenia Versicherungen;Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00494;0001/ 02 209 258 L 81;Gebäudeversicherung;Barmenia Versicherungen;Geschäftsgebäude;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00494;0001/ 02 209 258 L 31;Gebäudeversicherung;Barmenia Versicherungen;Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de
+00495;;Gebäudeversicherung;Barmenia Versicherungen;Grundstückshaftpflicht;schaden@barmenia.de, kaufmann-ug@barmenia.de

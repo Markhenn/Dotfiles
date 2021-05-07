@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# This program takes a csv with data from Vertretung for GEVERKA and changes it
+# to be imported by FTP from DocuWare
+#
+
+sed -E -e 's/F.Henninger/f_henninger/g' -e 's/Winter/e_winter/g' -e\
+  's/Sapia( \(Wohn\))?/t_sapia/g' -e 's/Schubert/m_schubert/g' -e\
+  's/Klingbeil/r_klingbeil/g' -e 's/Charell/a_charell/g' -e\
+  's/Bichlmeier/o_bichlmeier/g' -e 's/Schlick/o_schlick/g' -e 's/Rothe/k_rothe/g' -e\
+  's/Haupt/m_haupt/g' -e 's/;(...);/;00\1;/g' < "$1" >\
+ vertretungsregeln.csv
+
+
+dw_server='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/'
+ftp -in -u $dw_server vertretungsregeln.csv

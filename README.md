@@ -1,2 +1,2 @@
-# MyDotfiles
-new Dotfiles
+# dotfiles
+My dotfiles

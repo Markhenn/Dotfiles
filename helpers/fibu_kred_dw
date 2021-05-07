@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# This script takes an DocuWare export of all Kreditoren for the FiBu
+#   - Only Rechnung (eingehend)
+#   - only not empty Kred name
+#
+#   It then transforms the list and uploads it to DocuWare
+
+
+cut -d ';' -f 5,13 "$1" > temp.csv
+
+head -n 1 temp.csv > FiBu_Kreditoren_DW.csv
+
+tail -n +2 temp.csv | sort -uk 1 -t ';' >> FiBu_Kreditoren_DW.csv
+
+rm temp.csv
+
+dw_server='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/'
+ftp -in -u $dw_server FiBu_Kreditoren_DW.csv

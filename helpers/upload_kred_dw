@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# This program will take a kreditoren list from Karthago2000, reformat it and
+# then upload it via ftp to DocuWare
+
+
+dw_server='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/'
+
+# cat "$1" | uniq > kreditoren_mibu.csv
+uniq < "$1" > kreditoren_mibu.csv
+ftp -in -u $dw_server kreditoren_mibu.csv
+
+rm kreditoren_mibu.csv

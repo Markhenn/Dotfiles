@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This program will take the input file and upload it to dw
+
+
+dw_server='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/'
+
+ftp -in -u $dw_server "$1"
+

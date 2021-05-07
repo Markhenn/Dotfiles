@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# This script prepares the export of all payments from Eversports to be imported
+# into coda for further prepartions
+
+# Here are the parts in order
+# Delete the header line
+# Only take the lines with the following attributes
+#   not 0,00 brutto
+#   not Bargeld
+#   not Gutschein
+#   not Uberweisung
+# change all the payment methods to Eversports
+# Export the whole thing to a new file
+
+# Troubleshooting
+# In case a new payment method for eversports shows up, you will have to add it
+# manually to the sed -e part
+
+sed '1d' "$1" |\
+  grep -v -e ';0,00;0,00;' -e 'Bargeld' -e 'Gutschein (v' -e 'Überweisung' |
+  sed -e 's/Paypal/Eversports/g' -e 's/;Kreditkarte;/;Eversports;/g' -e\
+  's/Sofortüberweisung/Eversports/g' >\
+  "Export_Coda.csv"
+
