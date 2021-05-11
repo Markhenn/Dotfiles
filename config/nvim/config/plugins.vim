@@ -19,7 +19,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kana/vim-textobj-user'
     " Tim Popes collection of useful plugin
     Plug 'tpope/vim-sensible'
-    Plug 'tope/vim-repeat'
+    Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
