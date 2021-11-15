@@ -8,7 +8,11 @@ export PATH=$HOME/dotfiles/helpers:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 # Path to Homebrew sbin
-export PATH="/usr/local/sbin:$PATH"
+# Homebrew intel mac
+# export PATH="/usr/local/sbin:$PATH"
+# Homebrew apple silicon
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
 
 # Add Python 3.9 path for nvim
 export PATH="/Users/mark/Library/Python/3.9/bin:$PATH"
@@ -49,7 +53,7 @@ bindkey '^[0B' history-substring-search-down
 
 # ZPlug set up
 # Define the environment variable ZPLUG_HOME 
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 # Loads zplug
 source $ZPLUG_HOME/init.zsh
 
