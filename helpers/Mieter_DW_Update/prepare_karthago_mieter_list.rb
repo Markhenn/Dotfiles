@@ -13,8 +13,6 @@ require 'csv'
 # sets up testing for --test argument
 if ARGV.first == '--test'
   file_name = ARGV[1]
-  dw_file_name = file_name
-  kt_file_name = file_name
   export_file_name = 'test.csv'
 else
   dw_file_name = ARGV.first
@@ -38,11 +36,10 @@ kt_array.map! do |row|
   [row[0], row[2], row[1], "nicht angeben", row[3], row[6], "nicht angeben", row[5], "#{row[0]}.#{row[3]}"]
 end
 
-# Merge both arrays and sort
-unsorted_array = dw_array + kt_array
-unsorted_array.uniq! { |row| row.last }
+# Sort Karthago array
+kt_array.uniq! { |row| row.last }
 
-sorted_array = unsorted_array.sort_by { |row| row.last }
+sorted_array = kt_array.sort_by { |row| row.last }
 
 array = [dw_header] + sorted_array
 

@@ -4,7 +4,7 @@
 # to be imported by FTP from DocuWare
 #
 
-sed -E -e 's/F.Henninger/f_henninger/g' -e 's/Winter/e_winter/g' -e\
+sed -E -e 's/Richard Henninger/f_henninger/g' -e 's/F.Henninger/f_henninger/g' -e 's/Winter/e_winter/g' -e\
   's/Sapia( \(Wohn\))?/t_sapia/g' -e 's/Schubert/m_schubert/g' -e\
   's/Klingbeil/r_klingbeil/g' -e 's/Charell/a_charell/g' -e\
   's/Bichlmeier/o_bichlmeier/g' -e 's/Schlick/o_schlick/g' -e 's/Rothe/k_rothe/g' -e\

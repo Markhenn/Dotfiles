@@ -1,0 +1,21 @@
+# DocuWare Documentation für GEVERKA
+
+
+## Wie funktioniert die Doumentation
+Unten stehen links zu den einzelnen Dokumenten die erklären wie die Dokumenten ablage in Docuware funktioniert. Erst kommen ein paar allgemeine Erklärung danach Erläuterungen zu jedem einzelnen Dokument und wie es in DocuWare abgelegt wird. 
+
+
+## Algemeine Ideen
+- Stammdatenspeicherung
+- Vertretung
+
+
+## Workflows
+
+[[### FiBu Archiv]]
+
+[### MiBu Archiv](### MiBu Archiv)
+
+### HV Archiv
+
+### Mietinteressenten Archiv

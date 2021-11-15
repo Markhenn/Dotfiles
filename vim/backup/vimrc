@@ -1,0 +1,287 @@
+" vimrc by Mark Henninger and influenced by many others
+
+set nocompatible
+
+" Autoload vim-plug if it is not installed already
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+" Install plugins with vim-plug
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+
+Plug 'jremmen/vim-ripgrep'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'itchyny/lightline.vim'
+" Plug 'tpope/vim-fugitive'
+Plug 'vim-ruby/vim-ruby'
+Plug 'fatih/molokai'
+" Plug 'rhysd/vim-gfm-syntax'
+" Plug 'mem-dev/vim'
+" Plug 'mattn/webapi-vim'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'kana/vim-textobj-user'
+" Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-rake'
+Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-rbenv'
+" Plug 'tpope/vim-rails'
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Initialize plugin system
+call plug#end()
+
+
+" Load sensible vim early to make changes
+runtime! plugin/sensible.vim
+
+" if has("vms")
+"   set nobackup" do not keep a backup file, use versions instead
+" else
+"   set backup " keep a backup file (restore to previous version)
+"   if has('persistent_undo')
+"     set undofile " keep an undo file (undo changes after closing)
+"   endif
+" endif
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  autocmd!
+
+  " For all text files set 'textwidth' to 80 characters.
+  autocmd FileType text setlocal textwidth=80
+  " Bind `q` to close the buffer for help files
+  autocmd Filetype help nnoremap <buffer> q :q<CR>
+  " add md suffix for gf file search
+  autocmd BufRead,BufNewFile *.md set suffixesadd+=.md
+  " creates an autocommand to set comments to continue on o
+  autocmd FileType * set formatoptions-=o formatoptions+=r
+augroup END
+
+" enable match it in vim to match do and end etc
+runtime macros/matchit.vim
+
+" adds the current directory to path
+" set path+=./
+
+" Optional themes for lightline
+" let g:lightline = { 'colorscheme': 'powerline' }  " lightline theme
+" old lightline colorscheme -> powerline
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+" lightline this turns off the default display
+set noshowmode
+
+" This is what files look like
+" set ffs=unix,dos,mac
+
+" faster scrolling
+set ttyfast "faster scrolling
+
+" Syntax highliting
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+" Set folding to syntax
+set foldmethod=syntax
+set nofoldenable
+
+" Activate true color support
+" set termguicolors
+" let &t_8f = '\<Esc>[38;2;%lu;%lu;%lum'
+" let &t_8b = '\<Esc>[48;2;%lu;%lu;%lum'
+
+" colorscheme for sublime
+colorscheme molokai
+" Set font to incosolata in macvim
+set guifont=InconsolataForPowerline-dz:h16
+
+" Updating colors for lines numbers and trailing white space
+set cursorline
+" highlight Normal ctermbg=None "Sets background to terminal setting
+highlight LineNr ctermfg=DarkGrey
+highlight Special ctermfg=Red
+" Sets the visual mode to orange like cursorline
+highlight Visual ctermfg=208 cterm=reverse
+
+set list            " show special characters
+
+" sets spaces to dots and colors them white
+set listchars=trail:.
+highlight Whitespace ctermfg=White
+match Whitespace /\s/
+
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+set number          " show line numbers
+set relativenumber  " show numbers relative to current line
+set numberwidth=5
+set showcmd         " show command in bottom bar
+set grepprg=rg\ --vimgrep
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+set smartindent     " smart autoindenting
+set shiftwidth=2    " changes indentation width to 2 spaces
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" Remapping of keybindings
+nmap 0 ^
+
+" Use the space key as our leader. Put this near the top of your vimrc
+let mapleader = "\<Space>"
+
+nmap <leader>vim :vsp ~/.vim/vimrc<cr>
+nmap <leader>nvim :vsp ~/.config/nvim/init.vim<cr>
+nmap <leader>zsh :vsp ~/.zshrc<cr>
+nmap <leader>tmux :vsp ~/.tmux.conf<cr>
+nmap <leader>svim :source $MYVIMRC<cr>
+nmap <leader>szsh :!source ~/.zshrc<cr>
+nmap <leader>fc :FindContent<cr>
+nmap <leader>hff :Files ~/<cr>
+nmap <leader>cff :Files ~/Dropbox\ (Personal)/Coding/Launch_School/<cr>
+nmap <leader>ff :Files<cr>
+nmap <C-p> :Files<cr>
+
+" ----- FZF RG Plugin set up
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* FindContent call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, {'options': '--no-preview'}, <bang>0)
+
+
+" use fzf in in vim
+set rtp+=/usr/local/opt/fzf
+
+nmap<leader>vn :vnew<cr>
+
+" new file in current directory
+" map <Leader>nf :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap<leader>xn :new<cr>
+nmap<leader>tn :tabnew<cr>
+
+nmap<leader>w :w<cr>
+nmap<leader>q :q<cr>
+nmap<leader>sa :saveas 
+nmap<leader>dap ggdG:r!pbpaste<cr>ggdd
+nmap<leader>dps <leader>dap<leader>sa
+nmap<leader>ycl "+
+
+" copy whole file to clipboard
+nmap<leader>ya :%w !pbcopy<cr>
+" look for word under cursor in current directory
+nmap<leader>fw :Rg<cr>
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+" http://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
+" better jk normally but don't remap when it's called with a count
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" Remap jk combination to <esc>
+imap jk <esc>:w<cr>
+imap kj <esc>:w<cr>
+
+" Paste require pry, binding.pry into vim file
+nnoremap<leader>pry orequire 'pry'; binding.pry<ESC>
+
+" clean up any trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
+
+" add TODO above the line and comment it out
+nnoremap <leader>td OTODO<esc>:.Commentary<cr>
+
+nnoremap <leader>unskip :%s/ skip/# skip/gc<cr>
+nnoremap <leader>skip :%s/# skip/skip/gc<cr>
+
+" Run rubocop through VtR
+function! CallRubocopOnFile()
+  let file = @%
+  let string = "rubocop " . file
+  let create_pane_if_needed = 1 " boolean argument for the function
+  call VtrSendCommand(string, 1)
+endfunction
+
+" Run rubocop with bundle exec through VtR
+function! CallBRubocopOnFile()
+  let file = @%
+  let string = "bundle exec rubocop " . file
+  let create_pane_if_needed = 1 " boolean argument for the function
+  call VtrSendCommand(string, 1)
+endfunction
+
+" Call test for current file in test/file
+function! CallTestFileWithMiniTest()
+  let file = expand('%:t:r')
+  let string = "ruby ./test/" . file . "_test.rb"
+  let create_pane_if_needed = 1 " boolean argument for the function
+  call VtrSendCommand(string, 1)
+endfunction
+
+
+"----- Set up for Vim Tumx Runner
+nnoremap<leader>htr :VtrOpenRunner {'orientation': 'h', 'percentage': 50}<cr>}
+nnoremap<leader>vtr :VtrOpenRunner {'orientation': 'v', 'percentage': 20}<cr>}
+nnoremap<leader>cop :call CallBRubocopOnFile()<cr>
+nnoremap<leader>bcop :call CallBRubocopOnFile()<cr>
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+nnoremap <leader>rat :call CallTestFileWithMiniTest()<cr>
+nnoremap <leader>run :VtrSendFile<cr>
+nnoremap <leader>!run :VtrSendFile!<cr>
+nnoremap <leader>kr :VtrKillRunner<cr>
+nnoremap <leader>atp :VtrAttachToPane<cr>
+nnoremap <leader>sl :VtrSendLinesToRunner<cr>
+vnoremap <leader>sl :VtrSendLinesToRunner<cr>
+nnoremap <leader>flr :VtrFlushCommand<cr>
+nnoremap <leader>reor :VtrReorientRunner<cr>
+nnoremap <leader>rear :VtrReattachRunner<cr>
+nnoremap <leader>fr :VtrFocusRunner<cr>
+
+let g:VtrPercentage = 50
+let g:VtrOrientation = "h"
+let g:VtrUseVtrMaps = 0
+let g:VtrInitialCommand = ""
+
+" Have no back up, swap file etc
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile
+
+set undolevels=1000 "large history
