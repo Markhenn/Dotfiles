@@ -19,6 +19,7 @@ export PATH="/Users/mark/Library/Python/3.9/bin:$PATH"
 
 # Adding rbenv to path
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 # Important to use vi mode and spaceship needs to come before source omz
 export RPS1="%{$reset_color%}"
@@ -52,7 +53,6 @@ bindkey '^[0A' history-substring-search-up
 bindkey '^[0B' history-substring-search-down
 
 # ZPlug set up
-# Define the environment variable ZPLUG_HOME 
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 # Loads zplug
 source $ZPLUG_HOME/init.zsh
@@ -87,12 +87,15 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load 
+zplug load
 
 
 # Initialize rbenv alone and with evalcache
 # eval "$(rbenv init -)"
-_evalcache rbenv init -
+eval "$(rbenv init - zsh)"
+#old initilization
+# _evalcache rbenv init -
+
 
 # Initialize vi mode in zsh
 eval spaceship_vi_mode_enable
@@ -130,9 +133,9 @@ alias zshconfig="vim ~/.zshrc"
 alias omzconfig="vim ~/.oh-my-zsh"
 alias tmuxconfig="vim ~/.tmux.conf"
 alias vimconfig="vim ~/.vim/vimrc"
-alias nvimconfig="vim ~/.config/nvim/init.vim"
+alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias helpers="cdl ~/dotfiles/helpers"
-alias launchschool="cdl ~/Dropbox\ \(Personal\)/Code/Launch_School/"
+alias launchschool="cdl ~/Dropbox\ \(Personal\)/50-59\ Education/51_Launch_School/"
 alias inbox="cdl ~/Dropbox\ \(Personal\)/Inbox"
 alias upgrade_all="brew update && brew upgrade; brew cu --no-quarantine -y --cleanup; omz update; zplug update"
 alias sz="exec zsh"
@@ -140,5 +143,6 @@ alias db="cdl ~/Dropbox\ \(Personal\)"
 alias bsa="cdl ~/Black\ Sheep\ Dropbox"
 alias dotf="cdl ~/dotfiles"
 
-# From fzf installation
+# From fzf installation should actually be in the last place
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

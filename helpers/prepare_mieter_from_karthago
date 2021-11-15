@@ -17,10 +17,10 @@
 dw_download='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/mieter_objekte.csv'
 ftp -in $dw_download
 
-ruby ~/Dotfiles/helpers/Mieter_DW_Update/add_mieter.rb mieter_objekte.csv "$1"
+ruby ~/Dotfiles/helpers/Mieter_DW_Update/prepare_karthago_mieter_list.rb mieter_objekte.csv "$1"
 
-# dw_server='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/'
-# ftp -in -u $dw_server "mieter_objekte.csv"
+dw_server='ftp://ftp.docuware-online.de/QkmuGpfC_GG9qAH_dkHVSWav2SVM5SWFQl5GGyCY0/data/'
+ftp -in -u $dw_server "mieter_objekte.csv"
 
 # rm mieter_objekte.csv
 # rm "$1"

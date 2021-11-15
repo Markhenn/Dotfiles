@@ -1,11 +1,11 @@
 " auto-install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.vim/autoload/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
@@ -13,6 +13,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " set up Tmux Navigation within vim
     Plug 'christoomey/vim-tmux-navigator'
+    " Vim Tmux runner
+    Plug 'christoomey/vim-tmux-runner'
     " make Ruby methods an object
     Plug 'nelstrom/vim-textobj-rubyblock'
     Plug 'kana/vim-textobj-user'
@@ -26,7 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Advanced Ruby capability
     Plug 'vim-ruby/vim-ruby'
     " Ripgrep support
-    Plug 'jremmen/vim-ripgrep'
+    " Plug 'jremmen/vim-ripgrep'
     " Lightline Bottom Bar
     Plug 'itchyny/lightline.vim'
     " Molokai theme

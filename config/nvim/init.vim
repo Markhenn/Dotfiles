@@ -27,8 +27,11 @@ set splitbelow
 set splitright
 " show special characters
 set list
-" sets spaces to dots and colors them white
-set listchars=trail:.
+"Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+" sets a softwrap for lines longer than the editor
+set wrap linebreak
+
 highlight Whitespace ctermfg=White
 " tell which is a match
 match Whitespace /\s/
@@ -41,6 +44,12 @@ highlight LineNr ctermfg=DarkGrey
 highlight Special ctermfg=Red
 " Sets the visual mode to orange like cursorline
 highlight Visual ctermfg=208 cterm=reverse
+
+" -----------------------------------------------------
+" VimWiki Config
+" This makes vimWiki work better with gollum
+" let g:vimwiki_list = [{'path': '~/Dropbox (Personal)/Notes/DocuWare-GEVERKA-Documentation/', 'syntax': 'markdown', 'ext': '.wiki'}]
+" let g:vimwiki_ext2syntax = {'.wiki': 'markdown'}
 
 " -----------------------------------------------------
 " Autocommands
@@ -89,14 +98,25 @@ let mapleader = "\<Space>"
 nmap<leader>vn :vnew<cr>
 nmap<leader>w :w<cr>
 nmap<leader>q :q<cr>
-nmap<leader>sa :saveas 
+nmap<leader>sa :saveas
 nmap<leader>dap ggdG:r!pbpaste<cr>ggdd
 nmap<leader>dps <leader>dap<leader>sa
-nmap <leader>vim :vsp ~/.vim/vimrc<cr>
-nmap <leader>nvim :vsp ~/.config/nvim/init.vim<cr>
-nmap <leader>zsh :vsp ~/.zshrc<cr>
-nmap <leader>tmux :vsp ~/.tmux.conf<cr>
-nmap <leader>svim :source $MYVIMRC<cr>
-nmap <leader>szsh :!source ~/.zshrc<cr>
+nmap<leader>vim :vsp ~/.vim/vimrc<cr>
+nmap<leader>nvim :vsp ~/.config/nvim/init.vim<cr>
+nmap<leader>zsh :vsp ~/.zshrc<cr>
+nmap<leader>tmux :vsp ~/.tmux.conf<cr>
+nmap<leader>bi :PlugInstall<cr>
+" nmap<leader>svim :source $MYVIMRC<cr>
+nmap<leader>svim :source %<cr>
+nmap<leader>szsh :!source ~/.zshrc<cr>
 " Paste require pry, binding.pry into file
 nnoremap<leader>pry orequire 'pry'; binding.pry<ESC>
+
+" Remap to make replacing work more easily
+nmap <leader>gr "*gr
+nmap <leader>gR "*gR
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+" Kill all extra white space
+nnoremap <leader>wht :StripWhitespace<cr>:w<cr>
