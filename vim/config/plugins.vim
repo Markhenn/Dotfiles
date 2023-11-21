@@ -43,6 +43,11 @@ call plug#begin('~/.vim/autoload/plugged')
     Plug 'ntpeters/vim-better-whitespace'
     " Set up wiki files through vim
     Plug 'vimwiki/vimwiki'
+    " ALE Linting plugin
+    Plug 'dense-analysis/ale'
+    " sets the project root at the .git file -> needed for fzf
+    Plug 'airblade/vim-rooter'
+    Plug 'alvan/vim-closetag'
 
     " FZF support
     " Plugin outside ~/.vim/plugged with post-update hook

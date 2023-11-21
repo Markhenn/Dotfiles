@@ -18,7 +18,7 @@
 # manually to the sed -e part
 
 sed '1d' "$1" |\
-  grep -v -e ';0,00;0,00;' -e ';4400;' -e 'Bargeld' -e 'Gutschein (v' -e 'Überweisung' |
+  grep -v -e ';0,00;0,00;' -e 'Bargeld' -e 'Gutschein (v' -e 'Überweisung' |
   sed -e 's/Paypal/Eversports/g' -e 's/;Kreditkarte;/;Eversports;/g' -e\
   's/Sofortüberweisung/Eversports/g' >\
   "Export_Coda.csv"

@@ -21,8 +21,11 @@ export PATH="/Users/mark/Library/Python/3.9/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 
+# Add openssl3 to be used by system
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+
 # Important to use vi mode and spaceship needs to come before source omz
-export RPS1="%{$reset_color%}"
+# export RPS1="%{$reset_color%}"
 
 # Make sure UTF-8 is used throughout
 export LC_CTYPE=en_US.UTF-8
@@ -40,13 +43,33 @@ if type brew &>/dev/null; then
 fi
 # Link to Homebrew OpenSSL to upgrade automatically
 # export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-# The above path expands the brew path - below is to speed up ohmyzsh
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
+# The above path expands the brew path - below is to speed up ohmyzsh - old
+# version for intel macs
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
+# new version for m1 macs
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
 
 # FZF set up
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim - {})+abort,ctrl-y:execute-silent(echo {} | pbcopy)+abort,ctrl-w:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up' --layout=reverse --extended --height 60%  --multi --preview='highlight -O ansi -l {} 2> /dev/null || cat {} | head -500' --preview-window='wrap'"
+# export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim - {})+abort,ctrl-y:execute-silent(echo {} | pbcopy)+abort,ctrl-w:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up' --layout=reverse --extended --height 60%  --multi --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' "
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim - {})+abort,ctrl-y:execute-silent(echo {} | pbcopy)+abort,ctrl-w:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up' --layout=reverse --extended --height 60%  --multi"
 # Use ripgrep as default search tool
 export FZF_DEFAULT_COMMAND='rg --no-ignore-vcs --files --hidden --follow --glob "!.git/*"'
+# Using highlight (http://www.andre-simon.de/doku/highlight/en/highlight.html)
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 
 # Bind up and down to search substring history
 bindkey '^[0A' history-substring-search-up
@@ -68,7 +91,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/fzf",   from:oh-my-zsh
 zplug "plugins/colored-man-pages",   from:oh-my-zsh
-zplug "plugins/vi-mode",   from:oh-my-zsh
+# zplug "plugins/vi-mode",   from:oh-my-zsh
 zplug "mroth/evalcache"
 ###########################################################
 # Theme
@@ -96,9 +119,18 @@ eval "$(rbenv init - zsh)"
 #old initilization
 # _evalcache rbenv init -
 
+# Install old Ruby Versions through RBENV
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export LDFLAGS="-L/opt/homebrew/opt/readline/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/readline/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig"
+export optflags="-Wno-error=implicit-function-declaration"
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 
 # Initialize vi mode in zsh
-eval spaceship_vi_mode_enable
+# eval spaceship_vi_mode_enable
 
 # Functions
 # time the shell loading time
@@ -145,4 +177,7 @@ alias dotf="cdl ~/dotfiles"
 
 # From fzf installation should actually be in the last place
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

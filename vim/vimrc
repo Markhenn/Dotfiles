@@ -40,6 +40,12 @@ highlight Special ctermfg=Red
 " Sets the visual mode to orange like cursorline
 highlight Visual ctermfg=208 cterm=reverse
 
+" Set up for Ale
+" Setting completion ^x + ^0 to use ALE
+set omnifunc=ale#completion#OmniFunc
+" Moving quickly between errors - need to change keys
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " -----------------------------------------------------
 " VimWiki Config
@@ -62,7 +68,15 @@ augroup vimrcEx
   autocmd FileType * set formatoptions-=o formatoptions+=r
 augroup END
 
-" -----------------------------------------------------
+"---------------web development------------------
+" basic tab spacing for html, css and js
+au BufNewFile,BufRead *.js,*.html,*.css
+    \ set expandtab |
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2
+
+"-----------------------------------------------------
 " Mappings
 
 " Remap escape to enter normal mode in terminal mode
@@ -85,9 +99,6 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 imap jk <esc>:w<cr>
 imap kj <esc>:w<cr>
 
-" Remap <C-p> to call FZF search
-nnoremap <C-p> :<C-u>FZF<CR>
-
 " Use the space key as our leader. Put this near the top of your vimrc
 let mapleader = "\<Space>"
 
@@ -102,8 +113,8 @@ nmap<leader>nvim :vsp ~/.config/nvim/init.vim<cr>
 nmap<leader>zsh :vsp ~/.zshrc<cr>
 nmap<leader>tmux :vsp ~/.tmux.conf<cr>
 nmap<leader>bi :PlugInstall<cr>
-" nmap<leader>svim :source $MYVIMRC<cr>
-nmap<leader>svim :source %<cr>
+" nmap<leader>svim :source %<cr>
+nmap<leader>svim :source $MYVIMRC<cr>
 nmap<leader>szsh :!source ~/.zshrc<cr>
 " Paste require pry, binding.pry into file
 nnoremap<leader>pry orequire 'pry'; binding.pry<ESC>
@@ -116,6 +127,19 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 " Kill all extra white space
 nnoremap <leader>wht :StripWhitespace<cr>:w<cr>
+
+nnoremap <leader>op :!open -a Brave\ Browser %<CR><CR>
+" nnoremap <C-O> :!open -a Brave\ Browser %<CR><CR>
+
+" FZF remappings
+" Remap <C-p> to call FZF search
+nnoremap <C-p> :<C-u>FZF<CR>
+let g:fzf_layout = { 'down':  '40%'}
+" Find the word under the cursor in all files
+nnoremap <silent> <Leader>fi :Rg <C-R><C-W><CR>
+nnoremap <silent> <C-f> :Rg <C-R><C-W><CR>
+" Search in all files
+nnoremap <silent> <Leader>rg :Rg <CR>
 
 " load scripts
 source $HOME/Dotfiles/vim/config/scripts.vim
