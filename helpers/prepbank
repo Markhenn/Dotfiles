@@ -19,7 +19,6 @@
 
 sed '1d' "$1" |\
   grep -v -e ';0,00;0,00;' -e ';4400;' -e 'Bargeld' -e 'Gutschein (v' -e 'Überweisung' |
-  sed -e 's/Paypal/Eversports/g' -e 's/;Kreditkarte;/;Eversports;/g' -e\
-  's/Sofortüberweisung/Eversports/g' >\
+  sed -e 's/Paypal/SumUp/g' -e 's/;Kreditkarte;/;SumUp;/g' -e\
+  's/Sofortüberweisung/SumUp/g' -e 's/EC/Bankomat (v.Ort)/SumUp/g' -e\ 's/Kreditkarte (v.Ort)/SumUp/g' >\
   "Export_Coda.csv"
-
