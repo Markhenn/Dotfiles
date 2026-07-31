@@ -1,0 +1,35 @@
+# This repo is PUBLIC. Anything with a credential in it must stay out.
+
+# Secrets — the canonical home for keys is ~/.zshenv (outside this repo)
+.env
+.env.*
+!.env.example
+*.env
+*_secret*
+*_token*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Local MCP server checkouts (postmark_mcp/ ships a real .env)
+postmark_mcp/
+
+# Dependencies and build output
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor / shell scratch
+*.swp
+*.swo
+*~
+.netrwhist
+*.bak
