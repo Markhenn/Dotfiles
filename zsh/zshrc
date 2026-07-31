@@ -120,14 +120,13 @@ eval "$(rbenv init - zsh)"
 # _evalcache rbenv init -
 
 # Install old Ruby Versions through RBENV
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-export LDFLAGS="-L/opt/homebrew/opt/readline/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/readline/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+# readline + libffi flags are joined - listing them separately meant the
+# second block silently clobbered the first
+export LDFLAGS="-L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/libffi/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig"
 export optflags="-Wno-error=implicit-function-declaration"
-export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 
 # Initialize vi mode in zsh
 # eval spaceship_vi_mode_enable
