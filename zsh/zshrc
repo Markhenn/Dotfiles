@@ -213,3 +213,11 @@ source "/Users/mark/.openclaw/completions/openclaw.zsh"
 # manually before running heavy migrations). Kill-switch for everyday shells is in ~/.zshenv.
 # Do NOT set GBRAIN_DATABASE_URL or GBRAIN_PREPARE here — GBRAIN_PREPARE=true forced on
 # the transaction pooler is what made 6543 return 0 search results in the past.
+
+# gstack — model for the Claude "outside voice" (the gstack-claude skill, which
+# only exists when gstack runs on a Codex host; on a Claude Code host the
+# outside voice is Codex instead). Without this, gstack uses its own pinned
+# frontier default, currently claude-fable-5-1. A model named explicitly in a
+# request still overrides this. Not a secret, so it lives here rather than in
+# ~/.zshenv. Companion pin for the other direction: GSTACK_CODEX_MODEL.
+export GSTACK_CLAUDE_MODEL=claude-opus-5
